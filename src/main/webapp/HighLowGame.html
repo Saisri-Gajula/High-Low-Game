@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<meta lang="en" charset="utf-8">
+		<title>Higher or Lower Game! Lets Play!</title>
+	</head>
+	<body>
+		<form name="HigherLow" onsubmit="return validate();">
+			<label>Enter a random number:</label>
+			<input id="randomNumber" name="RandomNumber" type="number">
+			<input value="submit" type="Submit">
+		</form>
+		<script>
+			function validate(){
+				const HighLow = document.forms.HigherLow;
+				const randnum = HighLow.elements.RandomNumber.value;
+				
+				var arraylist = [];
+				RandGeneratedBySys = Math.floor((Math.random() * 100) + 1);
+				if(RandGeneratedBySys > randnum){
+					arraylist.push(randnum);
+					document.write(RandGeneratedBySys);
+					document.write();
+					document.write(arraylist);
+					document.write("High");
+					return false;
+				}
+				else if(RandGeneratedBySys < randnum){
+					arraylist.push(randnum);
+					document.write(RandGeneratedBySys);
+					document.write();
+					document.write(arraylist);
+					document.write("Low");
+					return false;
+				}
+				else{
+					document.write("Your guess was correct! You won the match!");
+					return true;
+				}
+				
+			}
+		</script>
+	</body>
+</html>
